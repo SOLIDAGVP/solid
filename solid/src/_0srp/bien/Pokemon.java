@@ -28,11 +28,6 @@ public  class Pokemon {
         this.porcentajeVida=100;
     }
     
-    /* Esta no es una responsabilidad de un pokemon*/
-    public void curar(){
-        this.porcentajeVida=100;
-    }
-    
     
     public String getNombre() {
         return nombre;
