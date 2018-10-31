@@ -18,16 +18,21 @@ public abstract class Pokemon {
     private String tipo;
     private String habilidad;
     private double porcentajeVida;
-
+    private String ataque;
+    private double dañoAtaque;
+    
+    
     public Pokemon() {
         
     }
 
-    public Pokemon(String nombre, String tipo, String habilidad) {
+    public Pokemon(String nombre, String tipo, String habilidad,String ataque,double dañoAtaque) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.habilidad = habilidad;
         this.porcentajeVida=100;
+        this.ataque=ataque;
+        this.dañoAtaque=dañoAtaque;
     }
     
   
@@ -45,6 +50,22 @@ public abstract class Pokemon {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(String ataque) {
+        this.ataque = ataque;
+    }
+
+    public double getDañoAtaque() {
+        return dañoAtaque;
+    }
+
+    public void setDañoAtaque(double dañoAtaque) {
+        this.dañoAtaque = dañoAtaque;
     }
 
     public String getHabilidad() {

@@ -5,7 +5,7 @@
  */
 package _1ocp.bien;
 
-import _1ocp.mal.*;
+
 
 
 /**

@@ -13,25 +13,20 @@ import _1ocp.mal.*;
  */
 public class ManejadorAtaque {
     private final Pokemon pokemon;
+    private final Pokemon atacante;
 
-    public ManejadorAtaque(Pokemon pokemon) {
+    public ManejadorAtaque(Pokemon pokemon,Pokemon atacante) {
         this.pokemon = pokemon;
+        this.atacante=atacante;
     }
     
-    public void manejarAtaque(final Ataque ataque){
-        switch(ataque){
-            case ATAQUE_AGUA:
-                this.pokemon.setPorcentajeVida(this.pokemon.getPorcentajeVida()*0.70);
-            case ATAQUE_FUEGO:
-                this.pokemon.setPorcentajeVida(this.pokemon.getPorcentajeVida()*0.50);
-            case ATAQUE_AIRE:
-                this.pokemon.setPorcentajeVida(this.pokemon.getPorcentajeVida()*0.80);
-            case ATAQUE_PLANTA:
-                this.pokemon.setPorcentajeVida(this.pokemon.getPorcentajeVida()*0.60);
-               
+    public void manejarAtaque(final Pokemon atacante){
+            if(pokemon.getAtaque().equals(atacante.getAtaque())){
+                pokemon.setPorcentajeVida(pokemon.getPorcentajeVida()-atacante.getDañoAtaque());
+            }
             /*Cuando queremos agregar otro ataque (ej: ATAQUE_ROCA), tenemos que cambiar dos clases
               ManejadorAtaque y Ataque y esto viola el Principio Open Close
             */
-        }
+        
     }
 }
